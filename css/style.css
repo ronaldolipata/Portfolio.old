@@ -1,0 +1,460 @@
+/* ========== Imports ========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&display=swap');
+
+/* ========== CSS Variables ========== */
+
+:root {
+    --light-clr: #fafafa;
+    --light-accent-clr: #FFFBFA;
+    --pri-clr: #FF8C5A;
+    --pri-light-clr: #FFDED1;
+    --sec-clr: #3A414B;
+    --dark-clr: #242526;
+    --accent-clr: #2B2C2D;
+    --font-family: "Dongle";
+    --font-size: 2rem;
+    --line-height: 2rem;
+    --shadow: 0 2px 4px -3px rgba(0,0,0,0.2);
+    --shadow-pri-clr: 0 4px 8px -3px var(--pri-clr);
+    --filter: drop-shadow(1px 2px 5px rgba(0,0,0,0.2));
+    --filter-pri-clr: drop-shadow(1px 2px 5px rgba(255, 140, 90, 0.3));
+}
+
+/* ========== Global Stylings ========== */
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
+body, a, button, input, textarea {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--sec-clr);
+    line-height: 2.3rem;
+}
+
+/* width of the entire scrollbar */
+body::-webkit-scrollbar {
+    width: 7px; 
+  }
+  
+/* color of the tracking area */
+body::-webkit-scrollbar-track {
+    background: var(--light-clr);
+}
+
+body::-webkit-scrollbar-thumb {
+    /* color of the scroll thumb */
+    /* background-color: var(--pri-light-clr); */
+    background-color: var(--pri-clr);
+    /* roundness of the scroll thumb */
+    border-radius: 20px;
+    /* creates padding around scroll thumb */
+    /* border: 3px solid var(--pri-clr); */
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+nav {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+nav .container {
+    height: 60px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li a {
+    color: var(--light-clr);
+    text-align: left;
+    opacity: 0.9;
+}
+
+li a:hover {
+    color: var(--pri-clr);
+    opacity: 1;
+}
+
+.add-shadow {
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    height: 45px;
+}
+
+.menu {
+    color: var(--sec-clr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-list {
+    opacity: 0;
+}
+
+.navbar-list.active {
+    opacity: 1;
+    background-color: rgba(36, 37, 38, 0.9);
+    backdrop-filter: blur(0.7rem);
+    position: absolute;
+    inset: 0 0 0 25%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 2rem;
+    transition: 0.3s ease;
+}
+
+.menu .menu-close {
+    display: none;
+}
+
+.menu .menu-close.active {
+    color: var(--light-clr);
+    position: absolute;
+    z-index: 9999;
+    display: block;
+}
+
+.connect-btn, .send {
+    color: var(--light-clr);
+    background-color: var(--pri-clr);
+    box-shadow: var(--shadow-pri-clr);
+    padding: 0.5rem 1.5rem;
+    border-radius: 1em;
+    opacity: 1;
+}
+
+.connect-btn:hover {
+    color: var(--light-clr);
+    background-color: rgba(255, 140, 90, 0.85);
+    box-shadow: rgba(255, 140, 90, 0.85);
+}
+
+.send:hover {
+    color: var(--light-clr);
+    background-color: rgba(255, 140, 90, 0.85);
+    box-shadow: rgba(255, 140, 90, 0.85);
+}
+
+img {
+    width: 100%;
+    filter: var(--filter);
+}
+
+.logo img {
+    filter: none;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.section-title::after {
+    background-color: var(--pri-light-clr);
+    content: "";
+    display: block;
+    width: 145px;
+    height: 20px;
+    margin: -1rem auto;
+}
+
+.connect .section-title::after {
+    width: 265px;
+}
+
+.text-pri-clr {
+    color: var(--pri-clr);
+    font-weight: 600;
+}
+
+.connect input, .connect textarea {
+    filter: var(--filter);
+    outline-color: var(--pri-clr);
+    padding: 1rem 0 1rem 1rem;
+    width: calc(100% - 1rem);
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 7px;
+}
+
+.connect textarea {
+    resize: vertical;
+    max-height: 400px;
+}
+
+/* ========== Layouts ========== */
+
+/* ========== HERO ========== */
+
+.hero .container {
+    height: auto;
+}
+
+.hero .section-left {
+    margin-bottom: 4rem;
+}
+
+.hero h2 {
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    color: var(--pri-clr);
+    filter: var(--filter-pri-clr);
+    font-size: 4rem;
+    line-height: 3rem;
+    margin: 0 0 1.5rem -0.1rem;
+}
+
+.hero-text {
+    opacity: .8;
+    margin-bottom: 1.5rem;
+}
+
+.hero-img img {
+    width: 100%;
+    border-radius: 0.3rem;
+}
+
+.hero-socials {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.hero-socials a {
+    padding: 0 0.5rem;
+}
+
+/* ========== ABOUT ========== */
+
+.about {
+    background: url(/img/Code\ Background.svg);
+}
+
+.about p {
+    margin-bottom: 1rem;
+}
+
+.section-right {
+    margin-top: 3rem;
+}
+
+/* ========== PROJECTS ========== */
+
+.projects ul {
+    margin-left: 26px;
+}
+
+.project-title {
+    margin-bottom: 2rem;
+}
+
+.projects {
+    background: var(--light-accent-clr);
+}
+
+.project1 {
+    padding: 0 0 5rem 0;
+}
+
+/* ========== CONNECT WITH ME ========== */
+
+.connect {
+    background: url(/img/Code\ Background.svg);
+}
+
+.connect .ron-picture {
+    display: block;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    width: 60%;
+    
+}
+
+.connect-socials {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.connect-socials a {
+    padding: 0 0.5rem;
+}
+
+.connect .section-left p {
+    margin-bottom: 2rem;
+}
+
+.connect .section-left p:last-child {
+    margin-bottom: 0;
+}
+
+.connect .desktop {
+    display: none;
+}
+
+.connect input, .connect textarea {
+    line-height: 2rem;
+}
+
+.connect input::placeholder, .connect textarea::placeholder {
+    opacity: .7;
+}
+
+.send {
+    border: none;
+    margin-top: 0.5rem;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
+    background: var(--dark-clr);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    color: var(--light-clr);
+    font-size: 1.5rem;
+    line-height: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+    opacity: .7;
+}
+
+/* ========== Media Queries ========== */
+
+@media (min-width: 600px) {
+    .connect .ron-picture {
+        max-width: 40%;
+    }
+}
+
+@media (min-width: 800px) {
+    .connect .ron-picture {
+        max-width: 35%;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        scroll-padding-top: 80px;
+    }
+
+    .container {
+        max-width: 1280px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav .container {
+        height: 80px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .navbar-list {
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        /* justify-content: space-around; */
+    }
+
+    li {
+        margin-right: 3.5rem;
+    }
+
+    li:last-child {
+        margin-right: 0;
+    }
+
+    li a {
+        color: var(--sec-clr);
+        opacity: .7;
+    }
+
+    .container .section-right {
+        margin-top: 0;
+    }
+
+    .section-left {
+        width: 45%;
+    }
+
+    .section-right {
+        width: 45%;
+    }
+
+    /* ========== ABOUT ========== */
+
+    .about .container {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    /* ========== CONNECT WITH ME ========== */
+
+    .connect .ron-picture {
+        width: 40%;
+    }
+
+    .container {
+        align-items: flex-end;
+    }
+
+    .connect .mobile {
+        display: none;
+    }
+
+    .connect .desktop {
+        display: block;
+    }
+
+    /* ========== FOOTER ========== */
+
+    footer {
+        height: 50px;
+    }
+}
