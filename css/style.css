@@ -14,8 +14,9 @@
     --accent-clr: #2B2C2D;
     --font-family: "Dongle";
     --font-size: 2rem;
-    --line-height: 2rem;
+    --line-height: 2.3rem;
     --shadow: 0 2px 4px -3px rgba(0,0,0,0.2);
+    --shadowLight: 0 2px 4px -3px rgba(255, 255, 255, 0.5);
     --shadow-pri-clr: 0 4px 8px -3px var(--pri-clr);
     --filter: drop-shadow(1px 2px 5px rgba(0,0,0,0.2));
     --filter-pri-clr: drop-shadow(1px 2px 5px rgba(255, 140, 90, 0.3));
@@ -37,13 +38,19 @@ body, a, button, input, textarea {
     font-family: var(--font-family);
     font-size: var(--font-size);
     color: var(--sec-clr);
-    line-height: 2.3rem;
+    line-height: var(--line-height);
+    transition: .5s;
+}
+
+body.dark {
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
 }
 
 /* width of the entire scrollbar */
 body::-webkit-scrollbar {
     width: 7px; 
-  }
+}
   
 /* color of the tracking area */
 body::-webkit-scrollbar-track {
@@ -76,6 +83,19 @@ nav {
     top: 0;
     width: 100%;
     z-index: 2;
+    transition: .5s;
+}
+
+nav.dark {
+    background-color: var(--dark-clr);
+}
+
+.nav-shadow {
+    box-shadow: var(--shadow);
+}
+
+.nav-shadow.dark {
+    box-shadow: var(--shadowLight);
 }
 
 nav .container {
@@ -96,23 +116,62 @@ a {
     display: inline-block;
 }
 
-li a {
+.navbar-link {
     color: var(--light-clr);
     text-align: left;
     opacity: 0.9;
+    line-height: 2rem;
 }
 
-li a:hover {
+.navbar-link:hover {
     color: var(--pri-clr);
     opacity: 1;
 }
 
-.add-shadow {
-    box-shadow: var(--shadow);
+input[type="checkbox"] {
+    position: relative;
+    width: 50px;
+    height: 28px;
+    appearance: none;
+    background: #F0F0F0;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .08);
+}
+    
+input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: url("../img/dark-theme.svg");
+    background-size: 100% 100%;
+    transform: scale(1.1);
+    transition: .5s;
+}
+    
+input:checked[type="checkbox"]::before {
+    left: 25px;
+    background: url("../img/light-theme.svg");
+    background-size: 100% 100%;
+}
+
+.desktop {
+    display: none;
 }
 
 .logo {
-    height: 45px;
+    background-image: url('../img/Logo-light.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    transition: .5s;
 }
 
 .menu {
@@ -147,15 +206,15 @@ li a:hover {
 
 .menu .menu-close.active {
     color: var(--light-clr);
-    position: absolute;
     z-index: 9999;
     display: block;
 }
 
-.connect-btn, .send {
+.btn {
     color: var(--light-clr);
     background-color: var(--pri-clr);
     box-shadow: var(--shadow-pri-clr);
+    line-height: 2.3rem;
     padding: 0.5rem 1.5rem;
     border-radius: 1em;
     opacity: 1;
@@ -254,6 +313,27 @@ img {
     border-radius: 0.3rem;
 }
 
+.linkedin {
+    background-image: url('../img/light-linkedin.svg');
+    background-size: 100% 100%;
+    width: 45px;
+    height: 45px;
+}
+
+.github {
+    background-image: url('../img/light-github.svg');
+    background-size: 100% 100%;
+    width: 45px;
+    height: 45px;
+}
+
+.dribbble {
+    background-image: url('../img/light-dribbble.svg');
+    background-size: 100% 100%;
+    width: 45px;
+    height: 45px;
+}
+
 .hero-socials {
     text-align: center;
     margin-top: 1rem;
@@ -266,7 +346,8 @@ img {
 /* ========== ABOUT ========== */
 
 .about {
-    background-image: url("../img/code-background.svg");
+    /* background-image: url("../img/code-background.svg"); */
+    transition: .5s;
 }
 
 .about p {
@@ -279,16 +360,16 @@ img {
 
 /* ========== PROJECTS ========== */
 
+.projects {
+    background-image: url("../img/code-background.svg");
+}
+
 .projects ul {
     margin-left: 26px;
 }
 
 .project-title {
     margin-bottom: 2rem;
-}
-
-.projects {
-    background: var(--light-accent-clr);
 }
 
 .project1 {
@@ -298,7 +379,8 @@ img {
 /* ========== CONNECT WITH ME ========== */
 
 .connect {
-    background-image: url("../img/code-background.svg");
+    /* background-image: url("../img/code-background.svg"); */
+    transition: .5s;
 }
 
 .connect .ron-picture {
@@ -306,7 +388,6 @@ img {
     margin-inline: auto;
     margin-bottom: 1rem;
     width: 60%;
-    
 }
 
 .connect-socials {
@@ -324,10 +405,6 @@ img {
 
 .connect .section-left p:last-child {
     margin-bottom: 0;
-}
-
-.connect .desktop {
-    display: none;
 }
 
 .connect input, .connect textarea {
@@ -351,6 +428,10 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+footer.dark {
+    background-color: var(--accent-clr);
 }
 
 footer p {
@@ -399,24 +480,46 @@ footer p {
         opacity: 1;
         display: flex;
         align-items: center;
-        /* justify-content: space-around; */
+        position: static;
     }
 
     li {
         margin-right: 3.5rem;
     }
 
+    li input[type="checkbox"] {
+        display: flex;
+        align-items: center;
+    }
+
     li:last-child {
         margin-right: 0;
     }
 
-    li a {
+    .navbar-link {
         color: var(--sec-clr);
         opacity: .7;
     }
 
+    .navbar-link.dark {
+        color: var(--light-clr);
+    }
+
+    .btn {
+        color: var(--light-clr);
+        opacity: 1;
+    }
+
     .container .section-right {
         margin-top: 0;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
     }
 
     .section-left {
@@ -442,14 +545,6 @@ footer p {
 
     .container {
         align-items: flex-end;
-    }
-
-    .connect .mobile {
-        display: none;
-    }
-
-    .connect .desktop {
-        display: block;
     }
 
     /* ========== FOOTER ========== */

@@ -14,21 +14,24 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <img src="img/Logo.svg" class="logo" alt="">
+                <!-- <img src="img/Logo-light.svg" class="logo light" alt=""> -->
+                <!-- <img src="img/Logo-dark.svg" class="logo dark" alt=""> -->
             </div>
+
             <ul class="navbar-list">
                 <li><a href="#home" class="navbar-link">Home</a></li>
                 <li><a href="#about" class="navbar-link">About</a></li>
                 <li><a href="#projects" class="navbar-link">Projects</a></li>
-                
-                <!-- <li><a href="#theme" class="navbar-link">Theme</a></li> -->
-                <li><a href="#connect" class="navbar-link connect-btn">Connect with me</a></li>
+                <li><input type="checkbox" class="theme" name="theme" id="theme"></li>
+                <li><a href="#connect" class="navbar-link connect-btn btn">Connect with me</a></li>
             </ul>
+
             <div class="menu toggle-menu">
                 <i class="fa-solid fa-bars menu-open"></i>
                 <i class="fa-solid fa-xmark menu-close"></i>
             </div>
         </div>
+        
     </nav>
 
     <section class="hero" id="home">
@@ -37,7 +40,7 @@
                 <h2>Hello! I am</h2>
                 <h1 class="hero-title">Ronaldo Lipata</h1>
                 <p class="hero-text">Full-stack Web Developer and UI/UX Designer that helps small to medium enterprises scale their business by building <strong>Websites</strong> and <strong>Web Applications</strong></p>
-                <a href="#connect" class="connect-btn">Connect with me</a>
+                <a href="#connect" class="connect-btn btn">Connect with me</a>
                 <!-- <img src="img/rotated arrow left.svg" class="dotted-arrow-img" alt="rotated arrow left"> -->
             </div>
             <div class="section-right">
@@ -45,9 +48,14 @@
                     <img src="img/Ron.svg" alt="Ronaldo P. Lipata">
                 </div>
                 <div class="hero-socials">
-                    <a href="https://www.linkedin.com/in/ronaldolipata/" target="_blank"><img src="img/LinkedIn.svg" alt=""></a>
-                    <a href="https://github.com/ronaldolipata" target="_blank"><img src="img/GitHub.svg" alt=""></a>
-                    <a href="https://dribbble.com/ronaldolipata" target="_blank"><img src="img/Dribbble.svg" alt=""></a>
+                    <!-- Light theme icons -->
+                    <a href="https://www.linkedin.com/in/ronaldolipata/" target="_blank"><div class="linkedin icons"></div></a>
+                    <a href="https://github.com/ronaldolipata" class="light github" target="_blank"><div class="github icons"></div></a>
+                    <a href="https://dribbble.com/ronaldolipata" class="light dribbble" target="_blank"><div class="dribbble icons"></div></a>
+                    <!-- Dark theme icons -->
+                    <!-- <a href="https://www.linkedin.com/in/ronaldolipata/" class="dark" target="_blank"><img src="img/dark-linkedIn.svg" alt=""></a>
+                    <a href="https://github.com/ronaldolipata" class="dark" target="_blank"><img src="img/dark-gitHub.svg" alt=""></a>
+                    <a href="https://dribbble.com/ronaldolipata" class="dark" target="_blank"><img src="img/dark-dribbble.svg" alt=""></a> -->
                 </div>
             </div>
         </header>
@@ -117,9 +125,9 @@
             <div class="section-left">
                 <img src="img/Ron-Connect.svg" class="ron-picture" alt="Ron Picture">
                 <div class="connect-socials">
-                    <a href="https://www.linkedin.com/in/ronaldolipata/" target="_blank"><img src="img/LinkedIn.svg" alt=""></a>
-                    <a href="https://github.com/ronaldolipata" target="_blank"><img src="img/GitHub.svg" alt=""></a>
-                    <a href="https://dribbble.com/ronaldolipata" target="_blank"><img src="img/Dribbble.svg" alt=""></a>
+                    <a href="https://www.linkedin.com/in/ronaldolipata/" class="linkedin" target="_blank"><img src="img/light-linkedIn.svg" alt=""></a>
+                    <a href="https://github.com/ronaldolipata" class="github" target="_blank"><img src="img/light-gitHub.svg" alt=""></a>
+                    <a href="https://dribbble.com/ronaldolipata" class="dribbble" target="_blank"><img src="img/light-dribbble.svg" alt=""></a>
                 </div>
                 <p>Hey there! How are you? Thank you for visiting my Website, I hope you're doing great! :)</p>
                 <p>If you have inquiries, feel free to drop a message here or to LinkedIn and I'll get back to you the soonest. I look forward to work with you, have a good one!</p>
@@ -131,7 +139,7 @@
                     <input type="text" class="name" placeholder="Name">
                     <input type="text" class="email" placeholder="E-mail address">
                     <textarea class="message" name="message" id="" cols="30" rows="5" placeholder="Message"></textarea><br>
-                    <button class="send">Send message</button>
+                    <button class="send btn">Send message</button>
                 </form>
             </div>
         </div>
