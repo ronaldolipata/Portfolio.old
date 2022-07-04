@@ -266,7 +266,7 @@ img {
 /* ========== ABOUT ========== */
 
 .about {
-    background: url(/img/Code\ Background.svg);
+    background: url("img/Code\ Background.svg");
 }
 
 .about p {
@@ -298,7 +298,7 @@ img {
 /* ========== CONNECT WITH ME ========== */
 
 .connect {
-    background: url(/img/Code\ Background.svg);
+    background: url("img/Code\ Background.svg");
 }
 
 .connect .ron-picture {
