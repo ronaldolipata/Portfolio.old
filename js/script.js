@@ -72,17 +72,17 @@ theme.addEventListener("change", event => {
     body.classList.add("dark");
     nav.classList.add("dark");
     nav.classList.add("add-shadow.dark");
-    logo.src = "../img/logo-dark.svg";
-    heroLinkedIn.src = "../img/dark-linkedin.svg";
-    heroGitHub.src = "../img/dark-github.svg";
-    heroDribble.src = "../img/dark-dribbble.svg";
+    logo.src = "img/logo-dark.svg";
+    heroLinkedIn.src = "img/dark-linkedin.svg";
+    heroGitHub.src = "img/dark-github.svg";
+    heroDribble.src = "img/dark-dribbble.svg";
 
-    connectLinkedIn.src = "../img/dark-linkedin.svg";
-    connectGitHub.src = "../img/dark-github.svg";
-    connectDribble.src = "../img/dark-dribbble.svg";
+    connectLinkedIn.src = "img/dark-linkedin.svg";
+    connectGitHub.src = "img/dark-github.svg";
+    connectDribble.src = "img/dark-dribbble.svg";
 
-    technologies.src ="../img/dark-technologies.svg";
-    projects.style.backgroundImage = "url('../img/code-backgroundv2.svg')";
+    technologies.src ="img/dark-technologies.svg";
+    projects.style.backgroundImage = "url('img/code-backgroundv2.svg')";
     footer.classList.add("dark");
 
     // Get all links and add dark class
@@ -93,18 +93,18 @@ theme.addEventListener("change", event => {
     body.classList.remove("dark");
     nav.classList.remove("dark");
     about.classList.remove("dark");
-    logo.src = "../img/logo-light.svg";
+    logo.src = "img/logo-light.svg";
 
-    heroLinkedIn.src = "../img/light-linkedin.svg";
-    heroGitHub.src = "../img/light-github.svg";
-    heroDribble.src = "../img/light-dribbble.svg";
+    heroLinkedIn.src = "img/light-linkedin.svg";
+    heroGitHub.src = "img/light-github.svg";
+    heroDribble.src = "img/light-dribbble.svg";
 
-    connectLinkedIn.src = "../img/light-linkedin.svg";
-    connectGitHub.src = "../img/light-github.svg";
-    connectDribble.src = "../img/light-dribbble.svg";
+    connectLinkedIn.src = "img/light-linkedin.svg";
+    connectGitHub.src = "img/light-github.svg";
+    connectDribble.src = "img/light-dribbble.svg";
 
     technologies.src ="img/light-technologies.svg";
-    projects.style.backgroundImage = "url('../img/code-background.svg')";
+    projects.style.backgroundImage = "url('img/code-background.svg')";
     footer.classList.remove("dark");
 
     // Get all links and remove dark class
