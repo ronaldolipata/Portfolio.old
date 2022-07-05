@@ -1,7 +1,6 @@
 const toggleMenu = document.querySelector(".toggle-menu");
 const navBar = document.querySelector(".navbar-list");
 const toggleClose = document.querySelector(".menu-close");
-const toggleOpen = document.querySelector(".menu-open");
 
 let navBarList = document.querySelector(".navbar-list");
 let navBarLink = document.getElementsByClassName("navbar-link");
@@ -11,13 +10,8 @@ let theme = document.getElementById("theme");
 let body = document.querySelector("body");
 let nav = document.querySelector("nav");
 let logo = document.querySelector(".logo");
-
-// let icons = document.querySelectorAll(".icons");
-// let linkedIn = document.querySelectorAll(".linkedin");
-// let github = document.querySelector(".github");
-// let dribbble = document.querySelector(".dribbble");
-
 let about = document.querySelector(".about");
+let technologies = document.querySelector(".technologies");
 let projects = document.querySelector(".projects");
 let connect = document.querySelector(".connect");
 let footer = document.querySelector("footer");
@@ -39,13 +33,11 @@ toggleMenu.addEventListener("click", () => {
       toggleMenu.classList.remove("change");
       navBar.classList.remove("active");
       toggleClose.classList.remove("active");
-      toggleOpen.classList.remove("active");
       document.querySelector("body").style.overflow = "visible";
   } else {
       toggleMenu.classList.add("change");
       navBar.classList.add("active");
       toggleClose.classList.add("active");
-      toggleOpen.classList.add("active");
       document.querySelector("body").style.overflow = "hidden";
   }
 });
@@ -75,7 +67,7 @@ theme.addEventListener("change", event => {
     nav.classList.add("dark");
     nav.classList.add("add-shadow.dark");
     logo.style.backgroundImage = "url('../img/logo-dark.svg')";
-
+    technologies.src ="img/dark-technologies.svg";
     projects.style.backgroundImage = "url('../img/code-backgroundv2.svg')";
     footer.classList.add("dark");
 
@@ -88,11 +80,7 @@ theme.addEventListener("change", event => {
     nav.classList.remove("dark");
     about.classList.remove("dark");
     logo.style.backgroundImage = "url('../img/logo-light.svg')";
-    
-    // linkedIn.style.backgroundImage = "url('../img/light-linkedin.svg')";
-    // github.style.backgroundImage = "url('../img/light-github.svg')";
-    // dribbble.style.backgroundImage = "url('../img/light-dribbble.svg')";
-
+    technologies.src ="img/light-technologies.svg";
     projects.style.backgroundImage = "url('../img/code-background.svg')";
     footer.classList.remove("dark");
 
@@ -102,33 +90,3 @@ theme.addEventListener("change", event => {
     }
   }
 });
-
-// function getAllIcons() {
-//   for (i=0; i<icons.length; i++) {
-    
-//   }
-
-//   for (i=0; i<icons.length; i++) {
-    
-    
-//   }
-// }
-
-// function darkIcons() {
-//   for (i=0; i<icons.length; i++) {
-//     icons[i].style.width = "45px";
-//     icons[i].style.height = "45px";
-//   }
-
-//   for (i=0; i<icons.length; i++) {
-//     linkedIn[i].style.backgroundImage = "url('../img/dark-linkedin.svg')";
-    
-//   }
-
-//   github.style.backgroundImage = "url('../img/dark-github.svg')";
-//   dribbble.style.backgroundImage = "url('../img/dark-dribbble.svg')";
-// }
-
-// function lightIcons() {
-
-// }

@@ -67,6 +67,14 @@ body::-webkit-scrollbar-thumb {
     /* border: 3px solid var(--pri-clr); */
 }
 
+/* .dark-theme {
+    display: none;
+}
+
+.dark-theme.dark {
+    display: block;
+} */
+
 .container {
     width: 85%;
     max-width: 1200px;
@@ -313,27 +321,6 @@ img {
     border-radius: 0.3rem;
 }
 
-.linkedin {
-    background-image: url('../img/light-linkedin.svg');
-    background-size: 100% 100%;
-    width: 45px;
-    height: 45px;
-}
-
-.github {
-    background-image: url('../img/light-github.svg');
-    background-size: 100% 100%;
-    width: 45px;
-    height: 45px;
-}
-
-.dribbble {
-    background-image: url('../img/light-dribbble.svg');
-    background-size: 100% 100%;
-    width: 45px;
-    height: 45px;
-}
-
 .hero-socials {
     text-align: center;
     margin-top: 1rem;
@@ -345,8 +332,7 @@ img {
 
 /* ========== ABOUT ========== */
 
-.about {
-    /* background-image: url("../img/code-background.svg"); */
+.technologies {
     transition: .5s;
 }
 
@@ -377,11 +363,6 @@ img {
 }
 
 /* ========== CONNECT WITH ME ========== */
-
-.connect {
-    /* background-image: url("../img/code-background.svg"); */
-    transition: .5s;
-}
 
 .connect .ron-picture {
     display: block;
